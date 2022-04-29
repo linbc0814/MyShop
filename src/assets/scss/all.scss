@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap";
+@import "./helpers/variables";
+@import "./base";
+
+//components
+@import "./components/FooterItem";
+@import "./components/UserNavbarItem";
+@import "./components/Toast";
+@import "./components/CardItem";
+@import "./components/TimelineItem";
+@import "./components/AccordionItem";
+@import "./components/CountItem";
+@import "./components/CartItem";
+@import "./components/ProgressbarItem";
+
+// views
+@import "./views/HomeView";
+@import "./views/AboutView";
+@import "./views/FaqView";
+@import "./views/UserProductsListView";
+@import "./views/UserProductView";
+@import "./views/UserCartView";
+@import "./views/CustomerInfoView";
+@import "./views/UserOrderSuccess";
+@import "./views/UserConfirmView";
+
+

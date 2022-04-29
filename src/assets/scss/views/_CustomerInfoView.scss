@@ -1,0 +1,9 @@
+.fromTable{
+    td {
+        border-bottom: 1px solid   gray;
+    }
+    td:nth-child(odd), td:nth-child(4){
+        vertical-align: middle;
+        text-align: center;
+    }
+}

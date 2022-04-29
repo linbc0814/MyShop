@@ -1,0 +1,30 @@
+.cartThead{
+    th:nth-child(odd) {
+        text-align: center;
+    }
+    th:nth-child(4) {
+        text-align: center;
+    }
+}
+
+.cartTbody {
+    border-bottom: 1px solid gray;
+    td {
+        border: 1px solid   gray;
+        a{
+           line-height: 5rem;
+        }
+    }
+    td:nth-child(odd) {
+        vertical-align: middle;
+        text-align: center;
+    }
+    td:nth-child(even) {
+        vertical-align: middle;
+    }
+}
+
+.t-img {
+    height: 100px;
+    width: 100px;
+}

@@ -1,0 +1,25 @@
+.toast-container {
+  top: 100px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1061;
+  .text-toast-success {
+    color: $success !important;
+  }
+  .border-toast-success {
+    border-color: $success !important;
+  }
+}
+.toastItem{
+  color: antiquewhite;
+  background-color: white;
+
+}
+.toast {
+
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}

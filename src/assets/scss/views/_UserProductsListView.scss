@@ -1,0 +1,15 @@
+.sticky-position {
+  top: 5rem;
+}
+
+.list-group-item {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #9da282;
+  background-color: transparent;
+}
+.list-group-item.active{
+  background-color: #9da282 !important;
+  border-bottom: 1px solid #9da282
+}
