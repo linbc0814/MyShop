@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion accordion-flush" id="accordionExample">
+  <div class="accordion" id="accordionExample">
     <div
       class="accordion-item "
       v-for="(item, key) in question"
@@ -14,7 +14,7 @@
           aria-expanded="false"
           :aria-controls="`#collapse-${key}`"
         >
-          {{ item.question }}
+          <i class="bi bi-chat-left-text"></i> &ensp; {{ item.question }}
         </button>
       </h2>
       <div
@@ -30,13 +30,14 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
 export default {
   data() {
     return {
-      isCollapse: true,
+      isCollapse: false,
     };
   },
   props: ['question'],

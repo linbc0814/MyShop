@@ -30,13 +30,13 @@
               <i class="bi bi-card-text"></i>
               訂單明細
             </h1>
-            <table class="fromTable table table-bordered">
-              <thead class="rounded-3">
+            <table class="fromTable table divborder">
+              <thead >
                 <tr>
-                  <th class="table-dark" scope="col" width="15%">編號</th>
-                  <th class="table-dark" scope="col" width="40%">商品名稱</th>
-                  <th class="table-dark" scope="col" width="15%">數量</th>
-                  <th class="table-dark" scope="col" width="20%">價格</th>
+                  <th scope="col" width="15%">編號</th>
+                  <th scope="col" width="40%">商品名稱</th>
+                  <th scope="col" width="15%">數量</th>
+                  <th scope="col" width="20%">價格</th>
                 </tr>
               </thead>
               <tbody>
@@ -76,7 +76,7 @@
               table-responsive
               bg-white
               p-3
-              border border-dark
+              divborder
             "
           >
             <table class="table">

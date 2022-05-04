@@ -3,34 +3,36 @@ footer {
     width: 100%;
     background-color: #6F7A58;
     color: #F2F2F2;
-    h4{
-      padding-top: 0.5rem;
-      text-align: center;
+    text-align: center;
+    i{
+      font-size: 3rem;
+      padding: 0.5rem;
     }
-    hr{
-      width: 80%;
-      margin:  auto;
-      border: #CAC1AF 0.1rem solid;
+    a:hover{
+      color: white;
     }
-    div{
-      height: 10rem;
-      width: 50%;
-      float: left;
-      padding-left: 20%;
-      h3{
-        padding-top: 1rem;
+    @include media-breakpoint-up(lg) {
+      h4{
+        padding-top: 0.5rem;
       }
-      p{
-          font-size: 1rem;
-          line-height: 1rem;
+      hr{
+        width: 80%;
+        margin:  auto;
+        border: #CAC1AF 0.1rem solid;
       }
-      i{
-          font-size: 2rem;
-            padding: 0.5rem;
+      div{
+        h3{
+          padding-top: 1rem;
         }
-        a{
-          text-decoration:none;
-          color: #F2F2F2;
+        p{
+            font-size: 1rem;
+            line-height: 1rem;
         }
+        i{
+            font-size: 2rem;
+              padding: 0.5rem;
+          }
+      }
     }
+
 }

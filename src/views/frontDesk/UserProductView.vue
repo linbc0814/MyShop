@@ -1,33 +1,28 @@
 <template>
-  <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
-  <!-- eslint-disable vuejs-accessibility/form-control-has-label-->
-  <!-- eslint-disable vuejs-accessibility/alt-text -->
-  <!-- eslint-disable vue/no-multiple-template-root  -->
-  <!-- eslint-disable-next-line vue/no-multiple-template-root  -->
+<!-- eslint-disable vue/no-multiple-template-root
+eslint-disable vuejs-accessibility/form-control-has-label -->
   <Loading :active="isLoading" />
   <div class="viewbody">
-    <div class="productDeom">
+    <div class="productBody">
       <div class="container">
         <div class="row mt-5">
           <div class="col-md-7 mb-5">
             <div class="productImg mb-4">
-              <img :src="product.imageUrl" class="shadow" alt />
+              <img :src="product.imageUrl" class="shadow" alt="" />
             </div>
           </div>
           <div class="col-md-5">
-            <div class="productInfo">
-              <div class="cateTag mb-3">{{ product.category }}</div>
+            <div class="productTitle">
+              <div class="productTag mb-3">{{ product.category }}</div>
               <h3 class="">{{ product.title }}</h3>
               <div class="line"></div>
               <div class="descript mt-4">
-                <h4 class="disTitle">【產品說明】</h4>
+                <h4>【產品說明】</h4>
                 <p class="">{{ product.description }}</p>
               </div>
               <hr />
               <div class="mb-3">
-                <div class="h4">
-                  價格:NT{{ $filters.currency(product.price) }}
-                </div>
+                <div>價格:NT{{ $filters.currency(product.price) }}</div>
               </div>
               <h4 class="">數量:</h4>
               <!-- eslint-disable-next-line vue/no-v-model-argument -->
@@ -62,7 +57,7 @@
         <hr />
         <div class="d-flex justify-content-center">
           <div class="col-9 mt-5">
-            <ul class="row d-flex justify-content-center">
+            <ul class="row">
               <Card :products="hotProducts" />
             </ul>
           </div>

@@ -1,16 +1,10 @@
-.homeview {
-    background-color: #f2f2f2;
-    scroll-behavior: smooth;
-    div {
-        width: 100%;
-    }
-}
+
 .block_1 {
     background-image: url(/src/assets/imgs/homeview/homepageBG.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
-    height: 100vh;
+    min-height: 100vh;
     h1 {
         background-color: #f2f2f2;
         color: black;
@@ -95,80 +89,46 @@
 }
 
 .block_2 {
-    background-color: #ebe4dc;
-    height: 100vh;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.block_2Img {
-    img {
-        border-radius: 50%;
-        height: 30rem;
-        width: 30rem;
-    }
+    min-height: 100vh;
 }
 
-.block_2Text {
-    writing-mode: vertical-lr;
-    font-size: 5rem;
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    .text {
-        animation: showup 3s;
-        span {
-            animation: slidein 3.5s;
-        }
-    }
-}
-@keyframes showup {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.7;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes slidein {
-    0% {
-        opacity: 0;
-        margin-top: -5rem;
-    }
-    50% {
-        opacity: 0;
-        margin-top: -3rem;
-    }
-    70% {
-        opacity: 0.5;
-        margin-top: 0rem;
-    }
-    100% {
-        margin-top: 0rem;
-    }
-}
 .block_3 {
-    background-image: url(/src/assets/imgs/homeview/homepageBG3.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 50vh;
-    h1 {
-        text-align: center;
-        color: #000;
-    }
+    display: none;
+    @include media-breakpoint-up(lg) {
+        background-image: url(/src/assets/imgs/homeview/homepageBG3.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        min-height: 50vh;
+      }
 }
 .block_4 {
     background-image: url(/src/assets/imgs/homeview/teaGarden-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
-    height: 100vh;
+    min-height: 100vh;
+    div {
+        h1{
+            font-size: 3rem;
+        }
+        strong {
+            &::after {
+                content: "____";
+                color: gold;
+            }
+            &::before {
+                content: "____";
+                color: gold;
+            }
+        }
+        em{
+            color: #6f7a58;
+        }
+        div {
+            font-size: 1.5rem;
+        }
+    }
 }
+

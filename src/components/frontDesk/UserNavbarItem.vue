@@ -1,27 +1,12 @@
 <template>
-  <nav class="userNavbar navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">首頁</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarText"
-        aria-controls="navbarText"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <div class="navbar-nav">
-          <router-link to="/user/about" class="nav-link">關於禪茶</router-link>
-          <router-link to="/user/productslist" class="nav-link"
-            >禪茶訂購</router-link
-          >
-          <router-link to="/user/faq" class="nav-link">常見問題</router-link>
+  <nav class="navbar navbar-expand-lg fixed-top userNavbar">
+    <div class="container position-relative">
+      <router-link to="/" class="navbar-brand nav-link-color">禪茶</router-link>
+      <div class="d-flex order-lg-last">
+        <ul class="navbar-nav fs-3 flex-row">
+          <li class="nav-item me-3 me-lg-2 ">
           <router-link to="/cart" class="nav-link position-relative"
-            >購物車
+            ><i class="bi bi-basket-fill"></i>
             <span
               class="
                 position-absolute
@@ -37,7 +22,31 @@
               {{ cartlength }}
             </span>
           </router-link>
-        </div>
+          </li>
+        </ul>
+        <button
+          class="navbar-dark navbar-toggler ms-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/user/about" class="nav-link nav-link-color">關於禪茶</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/user/productslist" class="nav-link nav-link-color">禪茶訂購</router-link>
+          </li>
+          <li class="nav-item">
+             <router-link to="/user/faq" class="nav-link nav-link-color">常見問題</router-link>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

@@ -1,30 +1,72 @@
-.cartThead{
-    th:nth-child(odd) {
-        text-align: center;
-    }
-    th:nth-child(4) {
-        text-align: center;
-    }
-}
-
-.cartTbody {
-    border-bottom: 1px solid gray;
-    td {
-        border: 1px solid   gray;
-        a{
-           line-height: 5rem;
+.pc-cart {
+    display: none;
+    .cartThead {
+        @include media-breakpoint-up(lg) {
+            th:nth-child(odd) {
+                text-align: center;
+            }
+            th:nth-child(4) {
+                text-align: center;
+            }
         }
     }
-    td:nth-child(odd) {
-        vertical-align: middle;
-        text-align: center;
+
+    .cartTbody {
+        border-bottom: 1px solid gray;
+        td {
+            border: 1px solid gray;
+            @include media-breakpoint-up(lg) {
+                td {
+                    a {
+                        line-height: 5rem;
+                    }
+                }
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            td:nth-child(odd) {
+                vertical-align: middle;
+                text-align: center;
+            }
+            td:nth-child(even) {
+                vertical-align: middle;
+            }
+        }
     }
-    td:nth-child(even) {
-        vertical-align: middle;
+
+    .cartImg {
+        height: 5rem;
+        width: 5rem;
+        @include media-breakpoint-up(lg) {
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        display: block;
     }
 }
 
-.t-img {
-    height: 100px;
-    width: 100px;
+.m-cart {
+    display: block;
+    width: 100%;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+    .m-cartImg {
+        height: 15rem;
+        width: 15rem;
+    }
+    tr {
+        width: 100%;
+        border: 1px solid #6f7a58;
+    }
+    .m-cartTbody {
+        display: inline-block;
+        tr,
+        td {
+            display: block;
+        }
+    }
 }

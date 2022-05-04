@@ -1,9 +1,23 @@
-.fromTable{
-    td {
-        border-bottom: 1px solid   gray;
-    }
-    td:nth-child(odd), td:nth-child(4){
-        vertical-align: middle;
-        text-align: center;
+.fromTable {
+    @include media-breakpoint-up(lg) {
+        thead {
+            th {
+                color: white;
+                background-color: #9da282;
+                border: 1px solid #9da282;
+            }
+            border: 1px solid #9da282;
+        }
+        tbody {
+            border: 1px solid #9da282;
+        }
+        td:nth-child(odd),
+        td:nth-child(4) {
+            vertical-align: middle;
+            text-align: center;
+        }
+        tfoot{
+            border: 1px solid #9da282;
+        }
     }
 }

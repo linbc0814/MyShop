@@ -11,7 +11,7 @@
 <script>
 import emitter from '@/methods/emitter';
 import pushMessageState from '@/methods/pushMessageState';
-import filters from '@/methods/filters';
+import { currency, date } from '@/methods/filters';
 import ToastMessages from '@/components/shared/ToastMessages.vue';
 import Navbar from '@/components/frontDesk/UserNavbarItem.vue';
 import Footer from '@/components/frontDesk/FooterItem.vue';
@@ -26,7 +26,8 @@ export default {
     return {
       emitter,
       pushMessageState,
-      filters,
+      currency,
+      date,
     };
   },
   created() {

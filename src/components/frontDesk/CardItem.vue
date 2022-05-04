@@ -1,7 +1,8 @@
 <template>
   <!--  eslint-disable vue/no-multiple-template-root -->
   <Loading :active="isLoading" />
-  <li class="col-md-4 col-lg3 border-0" v-for="item in products" :key="item.id">
+  <li class="col-md-4 col-lg3 border-0 d-flex justify-content-center"
+  v-for="item in products" :key="item.id">
     <div class="wrapper">
       <div class="card">
         <div

@@ -1,0 +1,63 @@
+.coupon {
+  padding: 30px;
+  margin-bottom: 80px;
+  position: relative;
+  @include media-breakpoint-up(lg) {
+    padding: 0;
+    background: url(/src/assets/imgs/homeview/coupon.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &-info {
+    position: relative;
+    background-color: #c8caba;
+    z-index: 1;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    @include media-breakpoint-up(lg) {
+      width: 50%;
+      box-shadow: none;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 40%;
+    }
+  }
+}
+
+.coupon-body {
+  position: relative;
+  background-color: $gray-200;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #c8caba;
+    border-radius: 50%;
+    top: 50%;
+  }
+  &::after {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+.coupon-mark {
+  border-bottom: 1px dashed #cac1af;
+  font-size: 1.5rem;
+  @include media-breakpoint-up(md) {
+    border-right: 1px dashed #cac1af;
+    border-bottom: 0;
+    width: 30%;
+  }
+}
+.couponBtn {
+  background-color: #ebe4dc;
+  &:hover {
+    background-color: #dfdbd6;
+  }
+}

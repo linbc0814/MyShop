@@ -58,7 +58,7 @@
                       <img
                         :src="product.product.imageUrl"
                         :alt="product.product.title"
-                        class="t-img"
+                        class="confirm-img"
                       />
                     </td>
                     <td>

@@ -1,8 +1,8 @@
 @import "~bootstrap/scss/functions";
+@import "./helpers/variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/bootstrap";
-@import "./helpers/variables";
-@import "./base";
+@import "./helpers/base";
 
 //components
 @import "./components/FooterItem";
@@ -13,6 +13,7 @@
 @import "./components/AccordionItem";
 @import "./components/CountItem";
 @import "./components/CartItem";
+@import "./components/CouponItem";
 @import "./components/ProgressbarItem";
 
 // views

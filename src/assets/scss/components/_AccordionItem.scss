@@ -1,9 +1,6 @@
 .accordion{
-  margin-top: 5%;
-}
-
-.accordion:active{
-  color: #CAC1AF;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 
@@ -12,11 +9,6 @@
   button{
     font-size: 1.5rem;
   }
-}
-
-
-.show{
-  background-color: black;
 }
 .accordion-body{
   background-color: #EBE4DC;
