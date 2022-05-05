@@ -245,7 +245,6 @@ export default {
       };
       this.isLoading = true;
       this.$http.post(url, { data: coupon }).then((response) => {
-        console.log(response);
         this.pushMessageState(response, '優惠卷使用');
         this.isLoading = false;
         this.coupon_code = coupon.code;
@@ -256,8 +255,10 @@ export default {
       const pays = this.pay;
       const shippings = this.shipping;
       if (pays.length === 0) {
+        // eslint-disable-next-line no-alert
         alert('未選擇付款方式');
       } else if (shippings.length === 0) {
+        // eslint-disable-next-line no-alert
         alert('未選擇收貨方式');
       } else {
         this.$router.push({

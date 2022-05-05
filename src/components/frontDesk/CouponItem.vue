@@ -95,9 +95,9 @@ export default {
       input.setAttribute('value', coupon);
       input.select();
       if (document.execCommand('copy')) {
-        console.log(coupon);
         document.execCommand('copy');
         this.isCopy = !this.isCopy;
+        // eslint-disable-next-line no-alert
         alert('領取成功，已複製到剪貼簿');
       }
       document.body.removeChild(input);

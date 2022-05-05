@@ -261,7 +261,6 @@ export default {
       this.$http.get(url).then((response) => {
         this.cart = response.data.data;
         this.subtotal = this.cart.total - this.cart.final_total;
-        console.log(this.cart);
         this.cart.carts.filter((item) => {
           this.qtyList.push(item.qty);
           return this.qtyList;

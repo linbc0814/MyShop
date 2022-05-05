@@ -223,7 +223,6 @@ export default {
   },
   created() {
     this.getInfo();
-    console.log(this.cartData);
   },
 };
 </script>
