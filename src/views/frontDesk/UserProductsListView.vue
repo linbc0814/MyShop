@@ -9,7 +9,6 @@
           <div class="col-lg-3 mb-3">
             <ul class="list-group sticky-top sticky-position">
               <li v-for="(item, key) in filter.list" :key="key">
-                <!--active  顏色無法更改除非用 !important-->
                 <a
                   href="#"
                   class="list-group-item"

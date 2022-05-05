@@ -25,7 +25,6 @@ eslint-disable vuejs-accessibility/form-control-has-label -->
                 <div>價格:NT{{ $filters.currency(product.price) }}</div>
               </div>
               <h4 class="">數量:</h4>
-              <!-- eslint-disable-next-line vue/no-v-model-argument -->
               <div class="countNumber d-flex align-items-center">
                 <button class="btn minus" @click="changeQty(-1)">
                   <i class="bi bi-dash"></i>
