@@ -20,7 +20,7 @@ export default {
   },
   methods: {},
   mounted() {
-    this.axios.get('/json/faq.json').then((response) => {
+    this.axios.get('/MyShop/dist/json/faq.json').then((response) => {
       this.faq = response.data.faq;
     });
   },
