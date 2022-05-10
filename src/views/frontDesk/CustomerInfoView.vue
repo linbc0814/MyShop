@@ -1,7 +1,7 @@
 <template>
   <!-- eslint-disable vue/no-multiple-template-root -->
   <!-- eslint-disable vuejs-accessibility/label-has-for -->
-  <div class="viewbody">
+  <div class="viewbody customerInfo">
     <div class="container mb-5 py-5 px-md-4 mt-5">
       <div class="row justify-content-center mt-5">
         <div class="col-md-10 mx-auto">

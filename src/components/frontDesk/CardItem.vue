@@ -27,7 +27,7 @@
       </div>
       <div class="inside">
         <div class="icon">
-          <i class="bi bi-exclamation-circle"></i>
+          <i class="bi bi-bookmark-star"></i>
         </div>
         <div class="insidecontents">
           <router-link :to="`/user/product/${item.id}`">

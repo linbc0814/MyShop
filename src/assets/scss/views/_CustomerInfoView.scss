@@ -1,3 +1,6 @@
+.customerInfo{
+    overflow-x: hidden;
+}
 .fromTable {
     @include media-breakpoint-up(lg) {
         thead {
