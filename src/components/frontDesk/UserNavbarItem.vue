@@ -46,6 +46,9 @@
           <li class="nav-item">
              <router-link to="/user/faq" class="nav-link nav-link-color">常見問題</router-link>
           </li>
+          <li class="nav-item">
+             <router-link to="/user/searchorder" class="nav-link nav-link-color">訂單查詢</router-link>
+          </li>
         </ul>
       </div>
     </div>

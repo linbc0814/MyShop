@@ -65,6 +65,11 @@ const routes = [
         name: 'product/:productId',
         component: () => import('../views/frontDesk/UserProductView.vue'),
       },
+      {
+        path: 'searchorder',
+        name: 'SearchOrderView',
+        component: () => import('../views/frontDesk/SearchOrderView.vue'),
+      },
     ],
   },
   {

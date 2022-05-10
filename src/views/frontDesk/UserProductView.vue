@@ -1,6 +1,6 @@
 <template>
 <!-- eslint-disable vue/no-multiple-template-root
-eslint-disable vuejs-accessibility/form-control-has-label -->
+ eslint-disable vuejs-accessibility/form-control-has-label -->
   <Loading :active="isLoading" />
   <div class="viewbody">
     <div class="productBody">

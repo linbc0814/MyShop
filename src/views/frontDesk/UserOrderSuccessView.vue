@@ -29,6 +29,7 @@
       </div>
       <div class="banner">
         <h1 class="display-3 fw-bold text-center">感謝您的購買</h1>
+        <h3>訂單編號:{{this.orderId}}</h3>
         <div class="d-flex justify-content-center col-lg-12 py-2 mx-auto mt-5">
           <router-link
             to="/user/productslist"
