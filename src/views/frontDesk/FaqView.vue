@@ -8,69 +8,19 @@
       <div class="container py-5 mb-5 mt-4 mt-sm-5">
         <div class="row justify-content-center gy-5 gy-md-0">
           <div class="col-12 col-md-6">
-            <h3 class="text-center">禪茶地點</h3>
+            <h3 class="text-center mt-5">禪茶地點</h3>
             <Map />
           </div>
           <div class="col-12 col-md-6">
-            <h3 class="text-center">聯絡我們</h3>
-            <Form v-slot="{ errors, meta }" @submit="sendMessage">
-              <div class="mb-3">
-                <label for="email" class="form-label">Email </label>
-                <Field
-                  id="email"
-                  name="email"
-                  type="email"
-                  class="form-control"
-                  :class="{ 'is-invalid': errors['email'] }"
-                  placeholder="請輸入 Email"
-                  rules="email|required"
-                  v-model="form.user.email"
-                ></Field>
-                <ErrorMessage
-                  name="email"
-                  class="invalid-feedback"
-                ></ErrorMessage>
-              </div>
-
-              <div class="mb-3">
-                <label for="name" class="form-label">姓名 </label>
-                <Field
-                  id="name"
-                  name="姓名"
-                  type="text"
-                  class="form-control"
-                  :class="{ 'is-invalid': errors['姓名'] }"
-                  placeholder="請輸入姓名"
-                  rules="required"
-                  v-model="form.user.name"
-                ></Field>
-                <ErrorMessage
-                  name="姓名"
-                  class="invalid-feedback"
-                ></ErrorMessage>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">留言</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  class="form-control"
-                  cols="30"
-                  rows="10"
-                  v-model="form.message"
-                ></textarea>
-              </div>
-              <div class="text-end">
-                <button
-                  class="btn btn-danger"
-                  type="submit"
-                  :disabled="!meta.valid"
-                >
-                  送出
-                  <i class="bi bi-caret-right-fill"></i>
-                </button>
-              </div>
-            </Form>
+            <h3 class="text-center mt-5">聯絡我們</h3>
+            <div class="faqinfo">
+              <ul class="nav flex-column">
+                <li><i class="bi bi-telephone"></i>Tel:04-26123456</li>
+                <li><i class="bi bi-chat-dots"></i>Fax:04-26123456</li>
+                <li><i class="bi bi-geo-alt"></i>台灣台中市中區新台中火車站前廣場</li>
+                <li><i class="bi bi-envelope"></i>Mail:zentea.tw@gmail.com</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -101,21 +51,7 @@ export default {
     Map,
   },
   inject: ['emitter', 'pushMessageState'],
-  methods: {
-    sendMessage() {
-      const api = 'https://script.google.com/macros/s/AKfycbxSx45-bBsDdhO9oCKueAwK6tsufIaW3Mjm09mtQfoesu6UgcLmkS6AcUyjedkZMsB7/exec';
-      const forms = this.form;
-      this.isLoading = true;
-      this.$http.post(api, { forms })
-        .then((response) => {
-          this.pushMessageState(response, '送出留言');
-          this.isLoading = false;
-        }).catch(() => {
-          this.pushMessageState(false, '送出留言');
-          this.isLoading = false;
-        });
-    },
-  },
+  methods: {},
   mounted() {
     this.axios.get('/MyShop/dist/json/faq.json').then((response) => {
       this.faq = response.data.faq;
