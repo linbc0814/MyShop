@@ -1,5 +1,5 @@
 <template>
-<!-- eslint-disable vue/no-multiple-template-root
+  <!-- eslint-disable vue/no-multiple-template-root
  eslint-disable vuejs-accessibility/form-control-has-label -->
   <Loading :active="isLoading" />
   <div class="viewbody">
@@ -13,7 +13,20 @@
           </div>
           <div class="col-md-5">
             <div class="productTitle">
-              <div class="productTag mb-3">{{ product.category }}</div>
+              <div class=" d-flex justify-content-between">
+              <h3 class="productTag mb-3 mt-2">{{ product.category }}</h3>
+                <button
+                  type="button"
+                  @click.prevent="favorite(product.id)"
+                  class="btn "
+                >
+                  <i
+                    class="bi bi-heart text-strong fs-4"
+                    v-if="favoriteList.indexOf(product.id) === -1"
+                  ></i>
+                  <i class="bi bi-heart-fill text-strong fs-4" v-else></i>
+                </button>
+              </div>
               <h3 class="">{{ product.title }}</h3>
               <div class="line"></div>
               <div class="descript mt-4">
@@ -22,9 +35,11 @@
               </div>
               <hr />
               <div class="mb-3">
-                <div>價格:NT{{ $filters.currency(product.price) }}</div>
+                <div>
+                  <h2>價格:NT{{ $filters.currency(product.price) }}</h2>
+                </div>
               </div>
-              <h4 class="">數量:</h4>
+              <h4>數量:</h4>
               <div class="countNumber d-flex align-items-center">
                 <button class="btn minus" @click="changeQty(-1)">
                   <i class="bi bi-dash"></i>
@@ -51,7 +66,7 @@
           </div>
         </div>
       </div>
-      <div class="referPro mt-5">
+      <div class="hotProduct mt-5">
         <h4 class="text-center">熱門產品</h4>
         <hr />
         <div class="d-flex justify-content-center">
@@ -78,6 +93,8 @@ export default {
       hotProducts: [],
       arr: [],
       productNum: 1,
+      isLoading: false,
+      favoriteList: JSON.parse(localStorage.getItem('favorite')) || [],
     };
   },
   components: {
@@ -139,6 +156,33 @@ export default {
         this.isLoading = false;
         this.pushMessageState(response, '加入購物車');
       });
+    },
+    favorite(item) {
+      const favorite = this.favoriteList.indexOf(item);
+      if (favorite === -1) {
+        this.favoriteList.push(item);
+        this.pushMessageState(
+          {
+            data: {
+              success: true,
+              message: `已將 ${item.title} 加入收藏`,
+            },
+          },
+          '加入收藏',
+        );
+      } else {
+        this.favoriteList.splice(favorite, 1);
+        this.pushMessageState(
+          {
+            data: {
+              success: true,
+              message: `已將 ${item.title} 取消收藏`,
+            },
+          },
+          '取消收藏',
+        );
+      }
+      localStorage.setItem('favorite', JSON.stringify(this.favoriteList));
     },
   },
   created() {

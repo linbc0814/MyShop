@@ -56,6 +56,12 @@ const routes = [
         component: () => import('../views/frontDesk/FaqView.vue'),
       },
       {
+        path: 'favorite',
+        name: 'FavoriteView',
+        // eslint-disable-next-line import/extensions
+        component: () => import('../views/frontDesk/UserFavoriteView.vue'),
+      },
+      {
         path: 'productslist',
         name: 'productslist',
         component: () => import('../views/frontDesk/UserProductsListView.vue'),

@@ -38,18 +38,25 @@
     color: #9da282;
   }
 }
+.productTitle{
+  .bi-heart-fill{
+    color: red;
+  }
+.bi-heart{
+  color: #9da282;
+}
+}
 
-
-.referPro {
-  align-items: center;
+.hotProduct {
   hr {
     width: 110px;
     height: 5px;
     color: #9da282;
     margin: 0 auto;
   }
-  .top {
-    height: 88%;
+  .wrapper {
+    width: 17rem;
+    height: 22.3rem;
   }
 }
 

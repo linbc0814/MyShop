@@ -18,6 +18,20 @@
               送出
             </button>
           </div>
+          <div v-if="!this.orderget" class="p-5 text-center">
+            <p class="fs-1 opacity-50 mt-5">
+              <i class="bi bi-file-earmark-text"></i>
+              <br />
+              還沒有下單嗎?
+            </p>
+            <RouterLink
+              :to="{ path: '/user/productslist' }"
+              class="btn btn-primary btn-lg mb-5"
+            >
+              <i class="bi bi-arrow-right"></i>
+              去逛逛
+            </RouterLink>
+          </div>
           <div class="row d-flex justify-content-center mt-5">
             <div class="col-lg-8 text-primary" v-if="this.orderget">
               <div class="h-100 d-flex flex-column">
@@ -46,67 +60,73 @@
                     p-3
                   "
                 >
-             <table class="table">
-              <tbody>
-                <tr>
-                  <th scope="row" class="border-0">訂單編號</th>
-                  <td class="border-0">{{ this.order.id }}</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="border-0">下單時間</th>
-                  <td class="border-0">{{ $filters.date(this.order.create_at)}}</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="border-0">姓名</th>
-                  <td class="border-0">{{ this.order.user.name }}</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="border-0">電話</th>
-                  <td class="border-0">{{ this.order.user.tel }}</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="border-0">地址</th>
-                  <td class="border-0">{{ this.order.user.address }}</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="border-0">Email</th>
-                  <td class="border-0">{{ this.order.user.email }}</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="border-0">總金額</th>
-                  <td class="border-0">${{ $filters.currency(this.order.total) }}</td>
-                </tr>
-              </tbody>
-            </table>
-                <table class="table">
-                <tbody>
-                  <tr v-for="product in order.products" :key="product.id">
-                    <td>
-                      <img
-                        :src="product.product.imageUrl"
-                        :alt="product.product.title"
-                        class="confirm-img"
-                      />
-                    </td>
-                    <td>
-                      {{ product.product.title }}
-                    </td>
-                    <td>x {{ product.qty }}</td>
-                    <td class="text-end">
-                      <template v-if="product.final_total !== product.total">
-                        <del class="small text-muted"
-                          >${{ $filters.currency(product.total) }}</del
-                        >
-                        <br />
-                        <small class="text-danger me-1">折扣價</small>
-                      </template>
-                      <span class="text-danger fw-bold">
-                        ${{ $filters.currency(product.final_total) }}
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="border-0">訂單編號</th>
+                        <td class="border-0">{{ this.order.id }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="border-0">下單時間</th>
+                        <td class="border-0">
+                          {{ $filters.date(this.order.create_at) }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="border-0">姓名</th>
+                        <td class="border-0">{{ this.order.user.name }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="border-0">電話</th>
+                        <td class="border-0">{{ this.order.user.tel }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="border-0">地址</th>
+                        <td class="border-0">{{ this.order.user.address }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="border-0">Email</th>
+                        <td class="border-0">{{ this.order.user.email }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="border-0">總金額</th>
+                        <td class="border-0">
+                          ${{ $filters.currency(this.order.total) }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table">
+                    <tbody>
+                      <tr v-for="product in order.products" :key="product.id">
+                        <td>
+                          <img
+                            :src="product.product.imageUrl"
+                            :alt="product.product.title"
+                            class="confirm-img"
+                          />
+                        </td>
+                        <td>
+                          {{ product.product.title }}
+                        </td>
+                        <td>x {{ product.qty }}</td>
+                        <td class="text-end">
+                          <template
+                            v-if="product.final_total !== product.total"
+                          >
+                            <del class="small text-muted"
+                              >${{ $filters.currency(product.total) }}</del
+                            >
+                            <br />
+                            <small class="text-danger me-1">折扣價</small>
+                          </template>
+                          <span class="text-danger fw-bold">
+                            ${{ $filters.currency(product.final_total) }}
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -135,7 +155,6 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${this.orderId}`;
       this.isLoading = true;
       this.$http.get(api).then((response) => {
-        console.log(response.data.order);
         this.order = response.data.order;
         this.orderget = true;
         this.isLoading = false;

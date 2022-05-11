@@ -5,17 +5,17 @@
       <div class="d-flex order-lg-last">
         <ul class="navbar-nav fs-3 flex-row">
           <li class="nav-item me-3 me-lg-2 ">
+          <router-link to="/user/favorite" class="nav-link position-relative"
+            ><i class="bi bi-heart-fill"></i>
+          </router-link>
+          </li>
+          <li class="nav-item me-3 me-lg-2 ">
           <router-link to="/cart" class="nav-link position-relative"
             ><i class="bi bi-basket-fill"></i>
             <span
               class="
                 position-absolute
-                top-0
-                start-70
-                badge
-                rounded-pill
-                bg-danger
-                font-sans
+                top-30 start-100 translate-middle badge rounded-pill bg-danger fs-6
               "
               v-if="cartlength !== 0"
             >
