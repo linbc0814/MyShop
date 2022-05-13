@@ -9,7 +9,7 @@
         </div>
         <div class="col-6">
           <h3>© 2022 Copyright: LINBC</h3>
-          <a href="MyShop/dist/#/login" class="nav-link nav-link-color"
+          <a href="/login" class="nav-link nav-link-color"
             >後檯登入</a
           >
         </div>
