@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="inside">
+      <div class="inside" id="inside">
         <div class="icon">
           <i class="bi bi-bookmark-star"></i>
         </div>

@@ -104,14 +104,15 @@
       }
 }
 .block_4 {
-    background-image: url(/src/assets/imgs/homeview/teaGarden-bg.jpg);
+    background-image: url(/src/assets/imgs/homeview/block_4-BG.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto;
+    background-size:100%;
     min-height: 100vh;
     div {
         h1{
             font-size: 3rem;
+            color: #EBE4DC;
         }
         strong {
             &::after {
@@ -128,6 +129,9 @@
         }
         div {
             font-size: 1.5rem;
+            p{
+                color: #EBE4DC;
+            }
         }
     }
 }

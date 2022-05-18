@@ -97,14 +97,15 @@
         color: black;
       }
     }
+
     &:hover {
       width: 100%;
       height: 76.6%;
       right: 0;
       top: 0;
       border-radius: 0;
-      background: none;
-      backdrop-filter: blur(5px);
+      background: #F8F5F2;
+
       .icon {
         opacity: 0;
         right: 15px;
@@ -114,6 +115,7 @@
         opacity: 1;
         transform: scale(1);
         transform: translateY(0);
+        background: none;
       }
     }
     .insidecontents {
@@ -136,6 +138,7 @@
     color: #c8caba;
     font-size: 1.5rem;
     font-weight: bold;
+    color: black;
   }
   &::before {
     content: "";
@@ -163,7 +166,7 @@
     color: $dark;
     background-color: #c8caba;
     transition: color 0.2s ease-in-out 0.05s, background-color 0.2s ease-in-out 0.05s;
-    span{
+    span {
       color: black;
     }
   }
