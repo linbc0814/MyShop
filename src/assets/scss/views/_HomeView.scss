@@ -90,6 +90,15 @@
 
 .block_2 {
     min-height: 100vh;
+    .black_2Img{
+        display: none;
+    }
+    @include media-breakpoint-up(lg) {
+        .black_2Img{
+            display: block;
+        }
+    
+    }
 }
 
 .block_3 {

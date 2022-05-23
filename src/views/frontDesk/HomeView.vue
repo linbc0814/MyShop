@@ -48,13 +48,6 @@
         </div>
       </div>
     </section>
-    <div class="block_3">
-      <!-- <div class="container">
-      <div class="row align-self-center">
-        <h1>滋潤乾涸的靈魂</h1>
-      </div>
-      </div> -->
-    </div>
     <Coupon class="mt-5"/>
     <div class="block_4">
       <div class="d-flex justify-content-center">
