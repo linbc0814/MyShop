@@ -25,7 +25,7 @@
     <div class="container mb-5 py-5 px-md-4 mt-5">
       <div class="row justify-content-center my-5">
         <div class="col-lg-6 text-primary">
-          <div class="h-100 d-flex flex-column">
+          <div class="h-100 d-flex flex-column mb-4">
             <h3
               class="
                 h6

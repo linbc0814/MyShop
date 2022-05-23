@@ -1,18 +1,23 @@
 <template>
   <!--  eslint-disable vue/no-multiple-template-root -->
   <Loading :active="isLoading" />
-  <li class="col-md-4 col-lg3 border-0 d-flex justify-content-center"
-  v-for="item in products" :key="item.id">
+  <li
+    class="col-md-4 col-lg3 border-0 d-flex justify-content-center"
+    v-for="item in products"
+    :key="item.id"
+  >
     <div class="wrapper">
       <div class="card">
         <div
           class="top"
           :style="{ backgroundImage: 'url(' + item.imageUrl + ')' }"
         ></div>
-        <div class="bottom" >
+        <div class="bottom">
           <div class="left">
             <div class="details">
-              <h5>{{ item.title }}</h5>
+              <router-link :to="`/user/product/${item.id}`">
+                <h5>{{ item.title }}</h5></router-link
+              >
               <p>NT$ {{ $filters.currency(item.price) }}</p>
             </div>
             <button
@@ -25,14 +30,14 @@
           </div>
         </div>
       </div>
-      <div class="inside" id="inside">
+      <div class="insidecard">
         <div class="icon">
           <i class="bi bi-bookmark-star"></i>
         </div>
         <div class="insidecontents">
           <router-link :to="`/user/product/${item.id}`">
             <button class="btn btn-sm btn-frame w-50" type="button">
-              <span >詳細資訊</span>
+              <span>詳細資訊</span>
             </button>
           </router-link>
         </div>

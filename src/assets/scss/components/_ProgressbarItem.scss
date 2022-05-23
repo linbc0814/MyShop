@@ -43,7 +43,7 @@
     position: absolute;
     left: -50%;
     top: 20px;
-    z-index: 0;
+    z-index: 1;
   }
   li.active::before, li.active::after, li.done::before, li.done::after {
     background: #9DA282 ;

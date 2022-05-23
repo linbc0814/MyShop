@@ -1,0 +1,37 @@
+.countNumber {
+    margin: 0 auto;
+    .add,
+    .minus,
+    .productNumber {
+        padding: 4px 10px;
+        border: 1px solid black;
+    }
+
+    .add:hover,
+    .minus:hover {
+        color: black;
+        border-color: black;
+    }
+
+    .add {
+        border-radius: 0 3px 3px 0;
+    }
+
+    .minus {
+        border-radius: 3px 0 0 3px;
+    }
+
+    .productNumber {
+        text-align: center;
+        width: 15%;
+        min-width: 68px;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            -moz-appearance: textfield;
+        }
+    }
+}

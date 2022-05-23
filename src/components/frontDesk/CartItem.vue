@@ -119,9 +119,9 @@
                 <div class="spinner-border"></div>
               </div>
               <div class="ms-5" v-else>
-                <div class="countNumber d-flex align-items-center ms-2">
+                <div class="countNumber d-flex align-items-center ms-4">
                   <button
-                    class="btn minus"
+                    class="btn minus ms-2"
                     @click="updateCart(item.id, item.product_id, item.qty - 1)"
                   >
                     <i class="bi bi-dash"></i>

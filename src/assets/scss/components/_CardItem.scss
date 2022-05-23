@@ -1,6 +1,10 @@
 .wrapper {
-  width: 20rem;
-  height: 22.4rem;
+  width: 17rem;
+  height: 22.3rem;
+  @include media-breakpoint-up(lg) {
+    width: 20rem;
+    height: 22.4rem;
+  }
   background-color: #c8caba;
   margin: 5%;
   position: relative;
@@ -24,7 +28,7 @@
       -webkit-background-size: 100%;
       -moz-background-size: 100%;
       -o-background-size: 100%;
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
     }
     .bottom {
@@ -34,10 +38,12 @@
       h5 {
         margin: 0;
         padding: 0;
+        color: black;
       }
       p {
         margin: 0;
         padding: 0;
+        color: red;
       }
       .left {
         height: 100%;
@@ -46,11 +52,9 @@
         position: relative;
         float: left;
         .details {
-          margin-top: 0.3rem;
-          margin-left: 2rem;
           padding: 0.5rem;
           float: left;
-          width: calc(70% - 40px);
+          width: 70%;
         }
         .buy {
           float: right;
@@ -75,57 +79,62 @@
       }
     }
   }
-
-  .inside {
-    z-index: 9;
-    background: #c8caba;
-    width: 8.5rem;
-    height: 8.5rem;
-    position: absolute;
-    top: -70px;
-    right: -70px;
-    border-radius: 0px 0px 200px 200px;
-    transition: all 0.5s, border-radius 2s, top 1s;
-    overflow: hidden;
-    .icon {
+  .insidecard{
+    display: none;
+  }
+  @include media-breakpoint-up(lg) {
+    .insidecard {
+      display: block;
+      z-index: 9;
+      background: #c8caba;
+      width: 8.5rem;
+      height: 8.5rem;
       position: absolute;
-      right: 85px;
-      top: 85px;
-      i {
-        opacity: 1;
-        font-size: 1.5rem;
-        color: black;
-      }
-    }
-
-    &:hover {
-      width: 100%;
-      height: 76.6%;
-      right: 0;
-      top: 0;
-      border-radius: 0;
-      background: #F8F5F2;
-
+      top: -70px;
+      right: -70px;
+      border-radius: 0px 0px 200px 200px;
+      transition: all 0.5s, border-radius 2s, top 1s;
+      overflow: hidden;
       .icon {
-        opacity: 0;
-        right: 15px;
-        top: 15px;
+        position: absolute;
+        right: 85px;
+        top: 85px;
+        i {
+          opacity: 1;
+          font-size: 1.5rem;
+          color: black;
+        }
+      }
+  
+      &:hover {
+        width: 100%;
+        height: 76.6%;
+        right: 0;
+        top: 0;
+        border-radius: 0;
+        background: #F8F5F2;
+  
+        .icon {
+          opacity: 0;
+          right: 15px;
+          top: 15px;
+        }
+        .insidecontents {
+          opacity: 1;
+          transform: scale(1);
+          transform: translateY(0);
+          background: none;
+        }
       }
       .insidecontents {
-        opacity: 1;
-        transform: scale(1);
-        transform: translateY(0);
-        background: none;
+        padding: 5%;
+        opacity: 0;
+        transform: scale(0.5);
+        transform: translateY(-200%);
+        transition: opacity 0.2s, transform 0.8s;
+        text-align: center;
+        margin-top: 7rem;
       }
-    }
-    .insidecontents {
-      padding: 5%;
-      opacity: 0;
-      transform: scale(0.5);
-      transform: translateY(-200%);
-      transition: opacity 0.2s, transform 0.8s;
-      text-align: center;
-      margin-top: 7rem;
     }
   }
 }
@@ -205,3 +214,4 @@
     }
   }
 }
+
