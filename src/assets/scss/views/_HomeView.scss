@@ -90,10 +90,12 @@
 
 .block_2 {
     min-height: 100vh;
+    max-width: 100%;
     .black_2Img{
         display: none;
     }
     @include media-breakpoint-up(lg) {
+        max-width: 100%;
         .black_2Img{
             display: block;
         }
